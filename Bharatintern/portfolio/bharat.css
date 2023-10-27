@@ -1,0 +1,141 @@
+/* Reset default margin and padding for better styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* drrrrr */
+    
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    box-shadow: 0px 6px 6px 3px blueviolet;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px;
+    transition: transform 0.2s;
+    width: 90%; /* Adjust width as needed */
+    float: left;
+}
+
+.card.right {
+    float: right;
+    box-shadow: 0px 6px 6px 3px blueviolet;
+    height: auto;
+    width: 90%; /* Adjust width as needed */
+    padding: 40px;
+    margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Section Content Styles */
+.section-content {
+    max-width: 100%;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.header-content p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* Background Animation Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://plus.unsplash.com/premium_photo-1683309563514-aff14da6c40d?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: backgroundAnimation 30s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+}
+.contact-icons {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    color: #007bff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+

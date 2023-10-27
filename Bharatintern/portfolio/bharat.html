@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="bharat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    
+    
+    <header>
+        <div class="header-content">
+            <h1>Uma Aishwarya Gottumukkala</h1>
+            <p align="center">Web Developer</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="card left">
+        <div class="section-content">
+            <h3>About Me</h3>
+            <p>I'm a passionate web developer currently in my third year of pursuing a Bachelor of Technology (BTech). I have a strong desire to expand my knowledge and skill set in the field of web development. Web development, with its exciting and dynamic nature, captivates me. It involves creating websites and web applications, which I find immensely fascinating. Given the high demand for web development skills in our increasingly digital world, I'm committed to honing my abilities and making a meaningful contribution to this industry.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="card right">
+        <div class="section-content">
+            <h3>My Projects</h3>
+           
+            <ul>
+                <li>
+                    <a href="#">Auto-Exam Seating System:</a> Utilizing the Flask Python framework to automate seat assignments and invigilation duties.
+                </li>
+                <li>
+                    <a href="#">Care Connect +:</a> A Health related web application developed using HTML, CSS, and JavaScript.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certifications" class="card left">
+        <div class ="section-content">
+            <h3>Certifications</h3>
+            <ul>
+                <li>Fundamentals in Azure: AZ-900</li>
+                <li>Certified in HackOverflow 2k23, a 24-hour hackathon</li>
+                <li>NPTEL certification in Data Science for Engineers</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="card right">
+        <div class="section-content">
+            <h3>Contact Me</h3>
+            <p>You can reach out to me via:</p>
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/uma-aishwarya-gottumukkala-226a1b237" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/umaaishwarya" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:gumaaishwarya999@gmail.com">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        // Smooth scrolling function
+        function smoothScroll(target, duration) {
+            var targetElement = document.getElementById(target);
+            var targetPosition = targetElement.offsetTop;
+
+            var startPosition = window.pageYOffset;
+            var distance = targetPosition - startPosition;
+            var startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                var timeElapsed = currentTime - startTime;
+                var scroll = ease(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, scroll);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return (c / 2) * t * t + b;
+                t--;
+                return (-c / 2) * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        // Add click event listeners for the navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                var target = this.getAttribute('href').substring(1); // Get the target section ID
+                smoothScroll(target, 1000); // Adjust the duration as needed
+            });
+        });
+    </script>
+</body>
+</html>
