@@ -1,21 +1,49 @@
-function convertToCelsius() {
-    const fahrenheitInput = document.getElementById("fahrenheit");
-    const celsiusInput = document.getElementById("celsius");
+let celsiusInput = document.querySelector('#celsius > input')
+let fahrenheitInput = document.querySelector('#fahrenheit > input')
+let kelvinInput = document.querySelector('#kelvin > input')
 
-    if (fahrenheitInput.value !== "") {
-        const fahrenheit = parseFloat(fahrenheitInput.value);
-        const celsius = (fahrenheit - 32) * (5 / 9);
-        celsiusInput.value = celsius.toFixed(2);
-    }
+let btn = document.querySelector('.button button')
+
+
+function roundNumber(number){
+    return Math.round(number*100)/100
 }
 
-function convertToFahrenheit() {
-    const celsiusInput = document.getElementById("celsius");
-    const fahrenheitInput = document.getElementById("fahrenheit");
 
-    if (celsiusInput.value !== "") {
-        const celsius = parseFloat(celsiusInput.value);
-        const fahrenheit = (celsius * 9 / 5) + 32;
-        fahrenheitInput.value = fahrenheit.toFixed(2);
-    }
-}
+/* Celcius to Fahrenheit and Kelvin */
+celsiusInput.addEventListener('input', function(){
+    let cTemp = parseFloat(celsiusInput.value)
+    let fTemp = (cTemp*(9/5)) + 32
+    let kTemp = cTemp + 273.15
+
+    fahrenheitInput.value = roundNumber(fTemp)
+    kelvinInput.value = roundNumber(kTemp)
+})
+
+
+/* Fahrenheit to Celcius and Kelvin */
+fahrenheitInput.addEventListener('input', function(){
+    let fTemp = parseFloat(fahrenheitInput.value)
+    let cTemp = (fTemp - 32) * (5/9)
+    let kTemp = (fTemp -32) * (5/9) + 273.15
+
+    celsiusInput.value = roundNumber(cTemp)
+    kelvinInput.value = roundNumber(kTemp)
+})
+
+/* Kelvin to Celcius and Fahrenheit */
+kelvinInput.addEventListener('input', function(){
+    let kTemp = parseFloat(kelvinInput.value)
+    let cTemp = kTemp - 273.15
+    let fTemp = (kTemp - 273.15) * (9/5) + 32
+
+    celsiusInput.value = roundNumber(cTemp)
+    fahrenheitInput.value = roundNumber(fTemp)
+})
+
+
+btn.addEventListener('click', ()=>{
+    celsiusInput.value = ""
+    fahrenheitInput.value = ""
+    kelvinInput.value = ""
+})
